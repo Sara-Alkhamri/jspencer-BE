@@ -10,8 +10,9 @@ module.exports = {
 //methods to handle CRUD operartions for users table
 async function add(user) {
     const [id] = await db('users').insert(user, 'id');
-    return findById(id)
-}
+  
+    return findById(id);
+  }
 
 function find() {
     return db('users').select('id', 'username', 'password');

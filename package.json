@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon",  
+    "server": "nodemon index.js",  
 	  "start": "node index.js" 
   },
   "repository": {
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/Sara-Alkhamri/jspencer-BE.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sara Alkhamri",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Sara-Alkhamri/jspencer-BE/issues"

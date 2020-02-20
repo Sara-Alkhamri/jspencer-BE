@@ -4,7 +4,7 @@ const cors = require('cors'); //third party middleware to make it easy to config
 
 
 //import routes
-// const authRouter = require('./auth/auth-router')
+const authRouter = require('./auth/auth-router')
 // const usersRouter = require('./users/users-router')
 
 const server = express(); //creates an express application using the express module
@@ -17,8 +17,8 @@ server.use(cors()); //tells express to use cors middleware
 
 
 //routes go here
-// server.use('/api/auth', authRouter);
-// server.use('/api/users', usersRouter);
+server.use('/auth', authRouter);
+// server.use('/users', usersRouter);
 
 
 //configures our server to excute a function for ever GET request to '/'
