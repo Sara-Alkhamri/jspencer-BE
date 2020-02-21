@@ -6,7 +6,6 @@ const Users = require('../users/users-model');
 
 //register a user
 //Endpoint: auth/register
-
 router.post('/register', (req, res) => {
     const user = req.body;
     const hash = bcrypt.hashSync(user.password, 12);
@@ -24,9 +23,8 @@ router.post('/register', (req, res) => {
       });
   });
 
-  //user login
-  //Endpoint auth/login
-
+//user login
+//Endpoint auth/login
 router.post('/login', (req, res) => {
     let { username, password } = req.body;
   
