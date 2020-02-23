@@ -24,8 +24,8 @@ server.use('/auth', authRouter);
 //configures our server to excute a function for ever GET request to '/'
 //the second argument passed to the .get() method is the 'Route Handler function', which will run on every GET request to '/'
 server.get('/', (req, res) => { 
-    //express passes the request and response objects to this function
-    //the .send on the response object can be used to send a response to the client
+//express passes the request and response objects to this function
+ //the .send on the response object can be used to send a response to the client
     res.send('Server up!')
 })
 
