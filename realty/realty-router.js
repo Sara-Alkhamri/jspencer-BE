@@ -15,8 +15,8 @@ router.get('/', restricted,  (req, res) => {
 })
 
 //add photo
-//realty/create
-router.post('/create', restricted, (req, res) => {
+//realty/add
+router.post('/add', restricted, (req, res) => {
     let myPost = req.body;
     console.log('this is post', myPost)
     Realty.add(myPost)
