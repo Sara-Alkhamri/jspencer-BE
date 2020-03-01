@@ -9,24 +9,24 @@ module.exports = {
 };
 
 function get() {
-    return db('image');
+    return db('realty');
 }
 
 async function add(image) {
-    const [id] = await db('image').insert(image, 'id');
+    const [id] = await db('realty').insert(image, 'id');
     return findById(id);
 }
 
 function find() {
-    return db('image').select('id', 'image')
+    return db('realty').select('id', 'image')
 }
 
 function findBy(filter) {
-    return db('image').where(filter)
+    return db('realty').where(filter)
 }
 
 function findById(id) {
-    return db('image')
+    return db('realty')
         .where({id})
         .first();
 }

@@ -10,6 +10,6 @@ router.get('/', (req, res) => {
         res.status(200).json(image);
     })
     .catch(err => {
-        res.status(500).json({message: 'An error occured'})
+        res.status(500).json({message: 'An Error occured'})
     })
 })
