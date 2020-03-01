@@ -11,6 +11,6 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTableIfExists('image');
+    return knex.schema.dropTableIfExists('realty');
   
 };
