@@ -4,7 +4,7 @@ const Realty = require('./realty-model');
 const restricted = require('../auth/restricted-middleware');
 
 //get all photos
-router.get('/', restricted,  (req, res) => {
+router.get('/', (req, res) => {
     Realty.find()
     .then(photo => {
         res.status(200).json(photo);
