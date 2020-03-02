@@ -6,6 +6,7 @@ module.exports = {
     find,
     findBy,
     findById,
+    remove
 };
 
 function get() {
@@ -29,4 +30,10 @@ function findById(id) {
     return db('realty')
         .where({id})
         .first();
+}
+
+function remove(id) {
+    return db('realty')
+        .where('id', id)
+        .del()
 }
