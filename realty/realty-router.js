@@ -31,4 +31,27 @@ router.post('/add', restricted, (req, res) => {
       });
   });
 
+
+//delete
+//realty/delete:id
+router.delete('/delete/:id', restricted, (req, res) => {
+    const { id } = req.params;
+    Realty.remove(id)
+      .then(count => {
+        if (count > 0) {
+          res.status(200).json({message: 'Image deleted'});
+        } else {
+          res
+            .status(404)
+            .json({ error: 'An image with provided ID does not exist' });
+        }
+      })
+      .catch(error => {
+        res.status(500).json({
+          error: 'This image could not be removed'
+        });
+      });
+  });
+
+
 module.exports = router;
