@@ -5,7 +5,7 @@ const restricted = require('../auth/restricted-middleware');
 
 //get all photos
 router.get('/', (req, res) => {
-    Realty.find()
+    Realty.get()
     .then(photo => {
         res.status(200).json(photo);
     })

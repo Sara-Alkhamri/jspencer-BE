@@ -1,16 +1,16 @@
 const db = require('../database/dbConfig');
 
 module.exports = {
-    // get,
+    get,
     add,
     find,
     findBy,
     findById,
 };
 
-// function get() {
-//     return db('realty');
-// }
+function get() {
+    return db('realty');
+}
 
 async function add(image) {
     const [id] = await db('realty').insert(image, 'id');
