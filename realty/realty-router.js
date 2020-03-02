@@ -31,7 +31,6 @@ router.post('/add', restricted, (req, res) => {
       });
   });
 
-
 //delete
 //realty/delete:id
 router.delete('/delete/:id', restricted, (req, res) => {
