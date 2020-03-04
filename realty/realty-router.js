@@ -36,7 +36,7 @@ router.post('/add', restricted, (req, res) => {
 router.put('/update/:id', restricted, (req, res) => {
     const id = req.params.id;
     const action = req.body;
-  
+   
     Realty.update(id, action)
       .then(updated => {
         res.status(200).json(updated);
