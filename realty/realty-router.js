@@ -31,6 +31,23 @@ router.post('/add', restricted, (req, res) => {
       });
   });
 
+//update a post
+// realty/update/id
+router.put('/update/:id', restricted, (req, res) => {
+    const id = req.params.id;
+    const action = req.body;
+  
+    Realty.update(id, action)
+      .then(updated => {
+        res.status(200).json(updated);
+      })
+      .catch(error => {
+        res.status(500).json({
+          error: 'The information could not be modified'
+        });
+    });
+});  
+
 //delete
 //realty/delete:id
 router.delete('/delete/:id', restricted, (req, res) => {
