@@ -37,11 +37,12 @@ function update(id, changes) {
     return db('realty')
       .where({ id: id })
       .update(changes)
-      .then(count => (count > 0 ? get(id) : null));
+      
 }
 
 function remove(id) {
     return db('realty')
         .where('id', id)
         .del()
+        // .then(count => (count > 0 ? get(id) : null));
 }
