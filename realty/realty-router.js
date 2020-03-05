@@ -36,17 +36,17 @@ router.post('/add', restricted, (req, res) => {
 router.put('/update/:id', restricted, (req, res) => {
     const id = req.params.id;
     const action = req.body;
-   
+    console.log(id)
     Realty.update(id, action)
       .then(updated => {
-        res.status(200).json(updated);
+        res.status(200).json({message: 'Post updated'});
       })
-      .catch(err => {
+      .catch(error => {
         res.status(500).json({
           error: 'The information could not be modified'
         });
     });
-});  
+}); 
 
 //delete
 //realty/delete:id
