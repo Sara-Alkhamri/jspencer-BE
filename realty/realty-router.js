@@ -41,7 +41,7 @@ router.put('/update/:id', restricted, (req, res) => {
       .then(updated => {
         res.status(200).json(updated);
       })
-      .catch(error => {
+      .catch(err => {
         res.status(500).json({
           error: 'The information could not be modified'
         });
@@ -62,7 +62,7 @@ router.delete('/delete/:id', restricted, (req, res) => {
             .json({ error: 'An image with provided ID does not exist' });
         }
       })
-      .catch(error => {
+      .catch(err => {
         res.status(500).json({
           error: 'This image could not be removed'
         });
