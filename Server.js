@@ -7,6 +7,7 @@ const cors = require('cors'); //third party middleware to make it easy to config
 const authRouter = require('./auth/auth-router')
 const usersRouter = require('./users/users-router')
 const realtyRouter = require('./realty/realty-router')
+const contactRouter = require('./contact/contact-router')
 
 const server = express(); //creates an express application using the express module
 
@@ -21,6 +22,7 @@ server.use(cors()); //tells express to use cors middleware
 server.use('/auth', authRouter);
 server.use('/users', usersRouter);
 server.use('/realty', realtyRouter);
+server.use('/contact', contactRouter);
 
 
 
