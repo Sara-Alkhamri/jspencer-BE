@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const contact = require('./contact-model');
 
-router.get('/contact', (req, res) => {
+router.get('/', (req, res) => {
     contact.find()
     .then(contact => {
         res.json(contact);
