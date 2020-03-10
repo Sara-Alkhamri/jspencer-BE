@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 const contact = require('./contact-model');
 
+//contact
 router.get('/', (req, res) => {
     contact.find()
     .then(contact => {
