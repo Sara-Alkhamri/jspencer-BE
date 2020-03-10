@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 })
 
 
-
+//contact/message
 router.post('/message', (req, res) => {
     let myMessage = req.body;
     console.log('this is a message', myMessage)
