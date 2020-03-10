@@ -10,4 +10,22 @@ router.get('/', (req, res) => {
     .catch(err => res.send(err))
 })
 
-module.exports = router;
+
+
+router.post('/message', (req, res) => {
+    let myMessage = req.body;
+    console.log('this is a message', myMessage)
+    contact.add(myMessage)
+      .then(info => {
+        //   console.log(info)
+        res.status(200).json({
+          info
+        });
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+  });
+
+
+module.exports = router;  
