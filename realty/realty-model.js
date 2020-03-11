@@ -44,5 +44,5 @@ function remove(id) {
     return db('realty')
         .where('id', id)
         .del()
-        // .then(count => (count > 0 ? get(id) : null));
+        .then(count => (count > 0 ? get(id) : null));
 }

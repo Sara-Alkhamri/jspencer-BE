@@ -18,7 +18,7 @@ function find() {
 }
 
 function remove(id) {
-    return db('realty')
+    return db('contact')
         .where('id', id)
         .del()
         // .then(count => (count > 0 ? get(id) : null));
