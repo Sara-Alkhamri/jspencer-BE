@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const contact = require('./contact-model');
+const restricted = require('../auth/restricted-middleware')
 
 //contact
 router.get('/', (req, res) => {
@@ -27,6 +28,27 @@ router.post('/submit', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+//delete
+//contact/delete:id
+router.delete('/delete/:id', restricted, (req, res) => {
+    const { id } = req.params;
+    contact.remove(id)
+      .then(count => {
+        if (count > 0) {
+          res.status(200).json({message: 'Message deleted'});
+        } else {
+          res
+            .status(404)
+            .json({ error: 'A post with provided ID does not exist' });
+        }
+      })
+      .catch(error => {
+        res.status(500).json({
+          error: 'This post could not be removed'
+        });
+      });
+  });  
 
 
 module.exports = router;  
