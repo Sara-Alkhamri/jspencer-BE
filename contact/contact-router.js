@@ -4,7 +4,7 @@ const contact = require('./contact-model');
 const restricted = require('../auth/restricted-middleware')
 
 // get all submitted contact messages
-router.get('/', (req, res) => {
+router.get('/', restricted, (req, res) => {
     contact.find()
     .then(contact => {
         res.json(contact);
