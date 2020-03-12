@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
     .catch(err => res.send(err))
 })
 
-
 //contact/message
 router.post('/submit', (req, res) => {
     let myMessage = req.body;
