@@ -18,7 +18,7 @@ router.post('/submit', (req, res) => {
     console.log('this is a message', myMessage)
     contact.add(myMessage)
       .then(info => {
-        //   console.log(info)
+          console.log(info)
         res.status(200).json({
           info
         });
@@ -28,7 +28,7 @@ router.post('/submit', (req, res) => {
       });
   });
 
-//delete
+//delete message
 //contact/delete:id
 router.delete('/delete/:id', restricted, (req, res) => {
     const { id } = req.params;
