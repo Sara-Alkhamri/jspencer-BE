@@ -4,6 +4,7 @@ const contact = require('./contact-model');
 const restricted = require('../auth/restricted-middleware')
 
 // get all submitted contact messages
+//restricted route
 router.get('/', restricted, (req, res) => {
     contact.find()
     .then(contact => {
@@ -30,6 +31,7 @@ router.post('/submit', (req, res) => {
 
 //delete message
 //contact/delete:id
+//restricted route
 router.delete('/delete/:id', restricted, (req, res) => {
     const { id } = req.params;
     contact.remove(id)
