@@ -14,7 +14,7 @@ router.get('/', restricted, (req, res) => {
 })
 
 //contact/message
-router.post('/submit', (req, res) => {
+router.post('/', (req, res) => {
     let myMessage = req.body;
     console.log('this is a message', myMessage)
     contact.add(myMessage)
