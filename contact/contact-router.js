@@ -20,9 +20,9 @@ router.post('/', (req, res) => {
     contact.add(myMessage)
       .then(info => {
           console.log(info)
-        res.status(200).json({
+        res.status(200).json(
           info
-        });
+        );
       })
       .catch(err => {
         res.status(500).json(err);

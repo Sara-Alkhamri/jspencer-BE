@@ -8,8 +8,8 @@ module.exports = {
 
 //methods to handel CRUD operations for contact table
 
-async function add(contact) {
-    const [id] = await db('contact').insert(contact, 'id');
+async function add(message) {
+    const [id] = await db('contact').insert(message, 'id');
     return find(id);
   }
 
