@@ -26,6 +26,7 @@ router.post('/submit', (req, res) => {
         );
       })
       .catch(err => {
+        console.log('add message')
         res.status(500).json(err);
       });
   });
