@@ -15,9 +15,10 @@ router.get('/', restricted, (req, res) => {
 
 //contact/message
 router.post('/', (req, res) => {
-    let myMessage = req.body;
-    console.log('this is a message', myMessage)
-    contact.add(myMessage)
+    let msg = req.body;
+    console.log('this is a message', msg)
+
+    contact.add(msg)
       .then(info => {
           console.log(info)
         res.status(200).json(
