@@ -9,18 +9,18 @@ module.exports = {
 
 //methods to handel CRUD operations for contact table
 
-// async function add(message) {
-//     const [id] = await db('contact').insert(message, 'id');
-//     return findById(id);
-//   }
+async function add(msg) {
+    const [id] = await db('contact').insert(msg, 'id');
+    return findById(id);
+  }
 
-function add(msg) {
-    return db('contact')
-    .insert(msg, 'id')
-    .then(ids => {
-        return findById(ids[0]);
-    })
-}
+// function add(msg) {
+//     return db('contact')
+//     .insert(msg, 'id')
+//     .then(ids => {
+//         return findById(ids[0]);
+//     })
+// }
 
 function find() {
     return db('contact').select('id', 'firstName', 'lastName', 'email', 'message')
