@@ -21,9 +21,7 @@ router.post('/submit', (req, res) => {
     Contact.add(msg)
       .then(info => {
           console.log(info)
-        res.status(200).json(
-          info
-        );
+        res.status(200).json({info});
       })
       .catch(err => {
         console.log('add message')
