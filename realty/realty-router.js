@@ -22,9 +22,9 @@ router.post('/add', restricted, (req, res) => {
     Realty.add(myPost)
       .then(info => {
         //   console.log(info)
-        res.status(200).json({
+        res.status(200).json(
           info
-        });
+        );
       })
       .catch(err => {
         res.status(500).json(err);
